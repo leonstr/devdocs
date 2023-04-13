@@ -305,7 +305,7 @@ The "save" function is called to save a user submission. The parameters are the 
 #### get_files()
 
 ```php
-public function get_files($submission) {
+public function get_files(stdClass $submission, stdClass $user) {
     $result = [];
     $fs = get_file_storage();
 
