@@ -307,9 +307,9 @@ use function during_initial_install() or version string from the plugin configur
 First developer needs to add a new static method to some class that accepts instance of
 a hook as parameter.
 
-```php title="/local/stuff/classes/local/hook_callbacks.php"
+```php title="/local/stuff/classes/hook_callbacks.php"
 <?php
-namespace local_stuff\local;
+namespace local_stuff;
 use \mod_activity\hook\installation_finished;
 
 class hook_callbacks {
@@ -332,7 +332,7 @@ Then the developer has to register this new method as the hook callback by addin
 $callbacks = [
     [
         'hook' => mod_activity\hook\installation_finished::class,
-        'callback' => [\local_stuff\local\hook_callbacks::class, 'activity_installation_finished'],
+        'callback' => [\local_stuff\hook_callbacks::class, 'activity_installation_finished'],
         'priority' => 500,
     ],
 ];
